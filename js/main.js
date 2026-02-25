@@ -42,8 +42,8 @@ const chart = c3.generate({
     type: 'bar'
   },
   axis: {
-    x: { label: 'Collision Type', type: 'category' },
-    y: { label: 'Count in current map view' }
+    x: { label: 'Collisions', type: 'category' },
+    y: { label: 'Number of collisions in current map view' }
   },
   legend: { show: false },
   bindto: '#chart'
@@ -192,11 +192,9 @@ function updateDashboard() {
 
   chart.load({ columns });
 
-  // Optional: also update severity KPI text if you add an element
-  // document.getElementById("top-severity").innerText = ...
+  
 }
 
-// Reset button
 const reset = document.getElementById('reset');
 reset.addEventListener('click', () => {
   map.flyTo({ center: [-122.3321, 47.6170], zoom: 10.5 });
